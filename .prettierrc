@@ -4,5 +4,7 @@
     "arrowParens": "avoid",
     "semi": false,
     "trailingComma": "none",
-    "bracketSpacing": true 
+    "bracketSpacing": true,
+    "printWidth": 600,
+    "htmlWhitespaceSensitivity": "ignore"
   }
