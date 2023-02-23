@@ -1,7 +1,40 @@
-<template>vue</template>
+<template>
+    <transition-group name="products" appear>
+        <div
+          v-for="item in products"
+          :key="item.id"
+          id="item-list"
+          class="row align-items-center"
+        >
+          <product :item="item"></product>
+        </div>
+      </transition-group>
+</template>
 
 <script>
-export default {}
+import Product from '@/components/Product.vue'
+
+export default {
+    props: ['products'],
+    components : {
+        Product
+    }
+}
 </script>
 
-<style></style>
+<style>
+.products-enter-active,
+.products-leave-active {
+    transition: all 0.5s ease-in-out;
+}
+
+.products-enter-from {
+    opacity: 0;
+    transform: translateX(300px);
+}
+
+.products-leave-to {
+    opacity: 0;
+    transform: translateX(-300px);
+}
+</style>
